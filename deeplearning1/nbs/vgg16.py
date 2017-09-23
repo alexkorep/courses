@@ -230,5 +230,8 @@ class Vgg16():
         return test_batches, self.model.predict_generator(test_batches, test_batches.nb_sample)
 
 
-    def load_from_file(self, path):
-        self.model.load_weights(path)
+    def load_model(self):
+        self.model.load_weights('./vgg16-model-weights.hdf5')
+
+    def save_model(self):
+        self.model.save_weights('./vgg16-model-weights.hdf5')
